@@ -53,6 +53,8 @@ $result = $conn->query($sql);
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <title>Employee</title>
+    <link rel="icon" href="./concept-art/logo.png" type="image/png">
 </head>
 <body>
     <h1>Manage Employees</h1>
@@ -80,7 +82,7 @@ $result = $conn->query($sql);
             <td><?php echo $row['first_name']; ?></td>
             <td><?php echo $row['last_name']; ?></td>
             <td><?php echo $row['role']; ?></td>
-            <td>
+            <td class="actions">
                 <a href="?edit=<?php echo $row['id']; ?>">Edit</a>
                 <a href="?delete=<?php echo $row['id']; ?>" onclick="return confirm('Are you sure?');">Delete</a>
             </td>

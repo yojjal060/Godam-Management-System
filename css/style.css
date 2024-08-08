@@ -52,8 +52,13 @@ table {
 
 /* //login.css */
 
+.content{
+  width: auto;
+}
+
 .content i {
   margin-bottom: 41px;
+  
 }
 
 .container {
@@ -99,12 +104,19 @@ table {
   display: flex;
   flex-direction: column;
   row-gap: 14px;
+  width:25rem;
+  
 }
 
 .content__inputs {
   display: flex;
   flex-direction: column;
   row-gap: 8px;
+  
+}
+
+.login-username{
+  width: 100px;
 }
 
 .content__form label {
@@ -309,9 +321,11 @@ form input[type="submit"] {
 
 
 table {
+  
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 20px;
+  
 }
 
 table, th, td {
@@ -384,4 +398,85 @@ a[onclick]:hover {
   position:absolute;
   right: 1.5%;
   top:10%
+}
+
+
+/* actions-table */
+.actions{
+  display: flex;
+  gap:1rem;
+  flex-direction:row;
+}
+
+/* dashboard */
+/* dashboard */
+main {
+    padding: 20px;
+}
+
+.dashboard-overview {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.dashboard-cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 20px;
+    width: 220px;
+    text-align: center;
+}
+
+.card h2 {
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* recent activities */
+.recent-activities {
+    margin-top: 20px;
+}
+
+.recent-activities h2 {
+    margin-bottom: 10px;
+}
+
+.recent-activities table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.recent-activities th, .recent-activities td {
+    padding: 10px;
+    text-align: left;
+}
+
+.recent-activities th {
+    background: #f8f8f8;
+    border-bottom: 2px solid #ccc;
+}
+
+.recent-activities tr:nth-child(even) {
+    background: #f2f2f2;
+}
+
+/* footer */
+footer {
+    padding: 20px;
+    text-align: center;
+    background: #f8f8f8;
+    border-top: 1px solid #ccc;
 }

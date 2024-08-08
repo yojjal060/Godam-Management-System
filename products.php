@@ -31,7 +31,7 @@ if (isset($_GET['delete'])) {
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('i', $id);
     if ($stmt->execute()) {
-        echo "Product deleted successfully.";
+        echo "";
     } else {
         echo "Error: " . $stmt->error;
     }
@@ -83,7 +83,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['add'])) {
         $stmt->bind_param('ii', $product_id, $quantity);
         $stmt->execute();
         
-        echo "Product added successfully.";
+        
     } else {
         echo "Error: " . $stmt->error;
     }
@@ -98,6 +98,8 @@ $result = $conn->query($sql);
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>Dashboard</title>
+    <link rel="icon" href="./concept-art/logo.png" type="image/png">
 </head>
 <body>
     <h1>Manage Products</h1>
@@ -131,7 +133,7 @@ $result = $conn->query($sql);
             <td><?php echo $row['price']; ?></td>
             <td><?php echo $row['description']; ?></td>
             <td><?php echo $row['total_price']; ?></td>
-            <td>
+            <td class="actions" >
                 <a href="?edit=<?php echo $row['id']; ?>">Edit</a>
                 <a href="?delete=<?php echo $row['id']; ?>" onclick="return confirm('Are you sure?');">Delete</a>
             </td>

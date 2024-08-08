@@ -2,6 +2,9 @@
 session_start();
 include './includes/db.php';
 
+$username_error = "";
+$password_error = "";
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -21,10 +24,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             header('Location: index.php');
             exit();
         } else {
-            $error = "Invalid password.";
+            
+            $password_error = "Invalid password.";
         }
     } else {
-        $error = "No user found with that username.";
+        
+        $username_error = "No user found with that username.";
     }
 }
 ?>
@@ -53,16 +58,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       <form class="content__form" action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post">
         <div class="content__inputs">
           <label>
-            <input required="" type="text" name="username">
+        
+            <input required="" type="text" name="username" class="login-username">
             <span>Phone number, username, or email</span>
           </label>
           <label>
-            <input required="" type="password" name="password">
+            <input required="" type="password" name="password" class="login-password">
             <span>Password</span>
           </label>
         </div>
         <button>Log In</button>
+        
       </form>
+      <h3 class="error-message"><?php echo "$username_error"; ?></h3>
+      <h3 class="error-message"><?php echo "$password_error"; ?></h3>
     
     </div>
   </div>

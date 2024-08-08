@@ -21,6 +21,8 @@ $result = $conn->query($sql);
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>Inventory</title>
+    <link rel="icon" href="./concept-art/logo.png" type="image/png">
 </head>
 <body>
     <h1>Product Inventory</h1>

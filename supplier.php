@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['add_supplier'])) {
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('ssss', $company_name, $province, $city, $phone_number);
     if ($stmt->execute()) {
-        echo "Supplier added successfully.";
+        echo "";
     } else {
         echo "Error: " . $stmt->error;
     }
@@ -34,7 +34,7 @@ if (isset($_GET['delete'])) {
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('i', $id);
     if ($stmt->execute()) {
-        echo "Supplier deleted successfully.";
+        echo "";
     } else {
         echo "Error: " . $stmt->error;
     }
@@ -95,7 +95,7 @@ $supplier_result = $conn->query($supplier_sql);
             <td><?php echo $row['province']; ?></td>
             <td><?php echo $row['city']; ?></td>
             <td><?php echo $row['phone_number']; ?></td>
-            <td>
+            <td class="actions" >
                 <a href="?edit=<?php echo $row['id']; ?>">Edit</a>
                 <a href="?delete=<?php echo $row['id']; ?>" onclick="return confirm('Are you sure?');">Delete</a>
             </td>

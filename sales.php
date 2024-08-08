@@ -2,6 +2,7 @@
 
 require "./includes/header.php";
 $error_message = "";
+$product_error_message = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $product_id = $_POST['product_id'];
     $quantity = $_POST['quantity'];
@@ -37,11 +38,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $error_message = "Insufficient Quantity";
         }
     } else {
-        echo "Error: Product ID does not exist.";
+        
+        $product_error_message = "Product ID does not exist.";
     }
 }
 ?>
+<head>
+    <title>Sales</title>
+    <link rel="icon" href="./concept-art/logo.png" type="image/png">
+</head>
+ <h1>Manage Sales</h1>
 <div class="form-container">
+<h2>Add Sales Data</h2>
 <form method="post" action="">
     Product ID: <input type="number" name="product_id" required>
     Quantity: <input type="number" name="quantity" required>
@@ -49,6 +57,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <input type="submit" value="Record Sale">
 </form>
 <h3 class="error-message"><?php echo "$error_message"; ?></h3>
+<h3 class="error-message"><?php echo "$product_error_message"; ?></h3>
+
 </div>
 
 <h2>Sales History</h2>

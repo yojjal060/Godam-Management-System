@@ -12,19 +12,16 @@ include('includes/db.php');?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="icon" href="../concept-art/logo.png" type="image/png">
+    <link rel="icon" href="./concept-art/logo.png" type="image/png">
     <script src="../js-files/Toggle.js" defer></script>
     <script src="./markdown.js"></script>
+    
+    
 </head>
 <body>
     <nav>
         <img src="./concept-art/logo.png" alt="logo" width="60" height="60" class="logo" id="logo">
-        <!-- <a class="Dashboard" href="./admin.php" style="color: blue;">Dashboard</a>
-        <a class="Employee" href="./Employee.php">Employee</a>
-        <a class="product" href="./products.php">Product</a>
-        <a class="Inventory" href="./Inventory.php">Inventory</a>
-        <a class="sales" href="./sales.php">Sales</a>
-        <a href="./supplier.php">Suppliers</a> -->
+        
         <ul class="nav-links">
         <li><a href="./index.php">Dashboard</a></li>
         <li class="center"><a href="./employee.php">Employee</a></li>
