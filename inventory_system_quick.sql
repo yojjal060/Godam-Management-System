@@ -54,7 +54,7 @@ CREATE TABLE `employees` (
 
 INSERT INTO `employees` (`id`, `first_name`, `last_name`, `role`) VALUES
 (77, 'Yojjal', 'Sharma', 'SENIOR DEVELOPER'),
-(78, 'Swikriti', 'Neupane Sharma', 'Master Hacker of my Heart');
+
 
 -- --------------------------------------------------------
 

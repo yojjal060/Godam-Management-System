@@ -1,13 +1,13 @@
 <?php
 $servername = "localhost";
-$username = "root"; // Change this if necessary
-$password = ""; // Change this if necessary
+$username = "root"; 
+$password = ""; 
 $dbname = "inventory_system";
 
-// Create connection
+//connection banauni
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check connection
+//connection check
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }

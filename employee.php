@@ -1,4 +1,5 @@
 <?php
+ include './includes/db.php';
  require './includes/header.php';
 
 
@@ -82,7 +83,7 @@ $result = $conn->query($sql);
             <td><?php echo $row['first_name']; ?></td>
             <td><?php echo $row['last_name']; ?></td>
             <td><?php echo $row['role']; ?></td>
-            <td class="actions">
+            <td style="border-bottom: none; border-left: none;" class="actions">
                 <a href="?edit=<?php echo $row['id']; ?>">Edit</a>
                 <a href="?delete=<?php echo $row['id']; ?>" onclick="return confirm('Are you sure?');">Delete</a>
             </td>

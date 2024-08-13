@@ -8,6 +8,7 @@ $password_error = "";
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];
     $password = $_POST['password'];
+    $hashed_password = sha1($password); 
 
     $stmt = $conn->prepare("SELECT * FROM users WHERE username = ?");
     $stmt->bind_param("s", $username);
@@ -16,19 +17,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
-        // Verify the password
-        if ($password === $row['password']) { // Plain text comparison
+        // Verify the hashed password
+        if ($hashed_password === $row['password']) {
             $_SESSION['loggedin'] = true;
             $_SESSION['role'] = $row['role'];
             $_SESSION['username'] = $row['username'];
             header('Location: index.php');
             exit();
         } else {
-            
             $password_error = "Invalid password.";
         }
     } else {
-        
         $username_error = "No user found with that username.";
     }
 }
@@ -40,6 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="icon" href="./concept-art/logo.png" type="image/png">
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
@@ -62,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <input required="" type="text" name="username" class="login-username">
             <span>Phone number, username, or email</span>
           </label>
-          <label>
+          <label class="password-label">
             <input required="" type="password" name="password" class="login-password">
             <span>Password</span>
           </label>

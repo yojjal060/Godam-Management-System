@@ -1,5 +1,5 @@
 <?php
-
+include './includes/db.php';
 require './includes/header.php';
 ?>
 <!DOCTYPE html>
@@ -15,12 +15,12 @@ require './includes/header.php';
     
 
     <main>
-    <h1 class="dashboard-h1">Dashboard Overview</h1>
+    <p id="p-id" class="p-class">Dashboard Overview</p>
     <div class="dashboardd">
         <section class="dashboard-overview">
             
             <div class="dashboard-cards">
-                <div class="card">
+                <div class="card" id="card1">
                     <a  href="./products.php"><h2>Total Products</h2></a>
                     <?php
                     $result = $conn->query("SELECT COUNT(*) AS total FROM products");
@@ -28,7 +28,7 @@ require './includes/header.php';
                     echo "<p>{$data['total']}</p>";
                     ?>
                 </div>
-                <div class="card">
+                <div class="card" id="card2">
                     <a href="./sales.php"><h2>Total Sales</h2></a>
                     <?php
                     $result = $conn->query("SELECT COUNT(*) AS total FROM sales");
@@ -36,7 +36,7 @@ require './includes/header.php';
                     echo "<p>{$data['total']}</p>";
                     ?>
                 </div>
-                <div class="card">
+                <div class="card" id="card3" >
                     <a href="./employee.php"><h2>Total Employees</h2></a>
                     <?php
                     $result = $conn->query("SELECT COUNT(*) AS total FROM employees");
@@ -44,7 +44,7 @@ require './includes/header.php';
                     echo "<p>{$data['total']}</p>";
                     ?>
                 </div>
-                <div class="card">
+                <div class="card" id="card4">
                     <a href="./supplier.php"><h2>Total Suppliers</h2></a>
                     <?php
                     $result = $conn->query("SELECT COUNT(*) AS total FROM suppliers");

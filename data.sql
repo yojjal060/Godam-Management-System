@@ -50,15 +50,19 @@ CREATE TABLE suppliers (
     phone_number VARCHAR(20) NOT NULL
 );
 
-CREATE TABLE IF NOT EXISTS employees (
+CREATE TABLE employees (
     id INT AUTO_INCREMENT PRIMARY KEY,
     first_name VARCHAR(255) NOT NULL,
     last_name VARCHAR(255) NOT NULL,
     role VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE recent_activities (
+CREATE TABLE profits (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    activity VARCHAR(255) NOT NULL,
-    date DATETIME DEFAULT CURRENT_TIMESTAMP
+    product_id INT NOT NULL,
+    sale_price DECIMAL(10, 2) NOT NULL,
+    cost_price DECIMAL(10, 2) NOT NULL,
+    profit DECIMAL(10, 2) NOT NULL,
+    date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (product_id) REFERENCES products(id) ON DELETE CASCADE
 );

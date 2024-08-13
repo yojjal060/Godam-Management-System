@@ -1,6 +1,7 @@
 <?php
-require "./includes/header.php";
 
+require "./includes/header.php";
+include './includes/db.php';
 // Ensure the inventory table exists
 $sql = "CREATE TABLE IF NOT EXISTS inventory (
     product_id INT NOT NULL,
@@ -37,7 +38,7 @@ if (isset($_GET['delete'])) {
     }
 }
 
-// Handle product editing
+
 if (isset($_POST['edit'])) {
     $id = $_POST['id'];
     $name = $_POST['name'];
@@ -98,7 +99,7 @@ $result = $conn->query($sql);
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <title>Dashboard</title>
+    <title>Product</title>
     <link rel="icon" href="./concept-art/logo.png" type="image/png">
 </head>
 <body>
@@ -117,7 +118,7 @@ $result = $conn->query($sql);
     <h2>Product List</h2>
     <table border="1">
         <tr>
-            <th>ID</th>
+            <th>P_ID</th>
             <th>Name</th>
             <th>Quantity</th>
             <th>Price</th>
@@ -133,7 +134,7 @@ $result = $conn->query($sql);
             <td><?php echo $row['price']; ?></td>
             <td><?php echo $row['description']; ?></td>
             <td><?php echo $row['total_price']; ?></td>
-            <td class="actions" >
+            <td style="border-bottom: none; border-left: none;" class="actions" >
                 <a href="?edit=<?php echo $row['id']; ?>">Edit</a>
                 <a href="?delete=<?php echo $row['id']; ?>" onclick="return confirm('Are you sure?');">Delete</a>
             </td>

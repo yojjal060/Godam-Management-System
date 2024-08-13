@@ -1,28 +1,31 @@
 <?php
+
 session_start();
+
 if (!isset($_SESSION['loggedin']) || $_SESSION['role'] !== 'admin') {
-    header('Location: login.php');
+    header('Location: ./Html/landing_page.html');
     exit();
 }
-include('includes/db.php');?>
+include('includes/db.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>Godam Management System</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="icon" href="./concept-art/logo.png" type="image/png">
-    <script src="../js-files/Toggle.js" defer></script>
+    
     <script src="./markdown.js"></script>
     
     
 </head>
 <body>
     <nav>
-        <img src="./concept-art/logo.png" alt="logo" width="60" height="60" class="logo" id="logo">
+        <a class="logo-a" href="./index.php"><img src="./concept-art/logo.png" alt="logo" width="60" height="60" class="logo" id="logo"></a>
         
-        <ul class="nav-links">
+    <ul class="nav-links">
         <li><a href="./index.php">Dashboard</a></li>
         <li class="center"><a href="./employee.php">Employee</a></li>
         <li class="upward"><a href="./products.php">Product</a></li>
@@ -39,3 +42,4 @@ include('includes/db.php');?>
             <a href="./logout.php">Logout</a>
         </div>
     </div>
+    
