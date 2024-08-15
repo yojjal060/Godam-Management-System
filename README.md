@@ -15,14 +15,14 @@ This project is a simple Inventory Management System built using HTML, CSS, and 
 
 1. **Clone the repository:**
     `sh
-    git clone https://github.com/your-username/inventory-management-system.git
+    git clone https://github.com/yojjal060/godam-management-system.git
     `
 2. **Navigate to the project directory:**
     `sh
-    cd inventory-management-system
+    cd godam-management-system
     `
 3. **Set up your database:**
-    - Import the inventory_system.sql file located in the  directory into your MySQL database. Named data.sql
+    - Import the inventory_system.sql file located in the  directory into your MySQL database. 
 
 4. **Configure the database connection:**
     - Open includes/db.php and update the database connection details:
@@ -38,12 +38,12 @@ This project is a simple Inventory Management System built using HTML, CSS, and 
 ### User Login
 
 1. **Navigate to the login page:**
-    - Open your browser and go to http://localhost/inventory-management-system/login.php.
+    - Open your browser and go to http://localhost/godam-management-system/login.php.
 
 2. **Log in with the following credentials:**
     - **Admin:**
         - Username: admin
-        - Password: admin123
+        - password:
    
 
 ### Admin Dashboard
